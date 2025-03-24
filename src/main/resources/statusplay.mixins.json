@@ -1,0 +1,12 @@
+{
+	"required": true,
+	"package": "net.bewis09.statusplay.mixin",
+	"compatibilityLevel": "JAVA_19",
+	"mixins": [
+		"ArgumentTypesMixin",
+		"TeamInjectorMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}
