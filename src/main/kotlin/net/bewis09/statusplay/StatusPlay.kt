@@ -15,7 +15,6 @@ import net.minecraft.command.argument.ColorArgumentType
 import net.minecraft.command.argument.EntityArgumentType
 import net.minecraft.command.argument.TextArgumentType
 import net.minecraft.scoreboard.ServerScoreboard
-import net.minecraft.scoreboard.Team
 import net.minecraft.server.MinecraftServer
 import net.minecraft.server.command.CommandManager
 import net.minecraft.server.command.ServerCommandSource
@@ -93,7 +92,7 @@ object StatusPlay : ModInitializer {
 			)
 
 			dispatcher.register(
-				CommandManager.literal("ms").requires { it.player?.hasPermissionLevel(2) == true }.then(
+				CommandManager.literal("ms").requires { it.player?.hasPermissionLevel(2) != false }.then(
 					CommandManager.literal("add").then(
 						CommandManager.argument(
 							"id", StringArgumentType.word()
